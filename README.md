@@ -2,9 +2,14 @@
 - origin/main = `main` - production-ready code
 - origin/dev = `dev` - development branch for new features and experiments
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Version history
+
+- v0.1.0 - Todo list started
+- v0.3.2 - Added favicon, edit button and animations.Adjusted box width.Changed name. 
 
 ## Getting Started
+
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 First, run the development server:
 
