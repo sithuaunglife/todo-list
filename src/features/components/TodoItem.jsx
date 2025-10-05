@@ -1,9 +1,9 @@
-// Container Component 
-"use client"
-import { Trash2 } from "lucide-react";
+// Container Component
+"use client";
+import { PencilIcon, Trash2 } from "lucide-react";
 import { useState } from "react";
 
-// child 
+// child
 const TodoItem = ({ todo, toggleTodo, editTodo, deleteTodo }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [value, setValue] = useState(todo.text);
@@ -20,12 +20,17 @@ const TodoItem = ({ todo, toggleTodo, editTodo, deleteTodo }) => {
     setTimeout(() => deleteTodo(todo.id), 1000); // 700ms matches animate.css default
   };
 
-// Presentational Component 
+  // Presentational Component
   return (
+    // in classname give group at outer shell to control group at animation group
     <div
-      className={`flex items-center justify-between border px-3 py-2 rounded 
+      className={`group flex items-center justify-between border px-3 py-4 rounded 
         animate__animated 
-        ${isExiting ? "animate__bounceOutLeft animate__slow" : "animate__bounceInLeft animate__slow"}`}
+        ${
+          isExiting
+            ? "animate__bounceOutRight animate__slow"
+            : "animate__bounceInLeft animate__slow"
+        }`}
     >
       <div className="flex items-center gap-2">
         <input
@@ -54,12 +59,22 @@ const TodoItem = ({ todo, toggleTodo, editTodo, deleteTodo }) => {
         )}
       </div>
 
-      <button
-        onClick={handleDelete}
-        className="text-red-500 hover:text-red-700 duration-300 active:scale-75 cursor-pointer"
-      >
-        <Trash2 />
-      </button>
+      {/* in classname use control to control group animation */}
+      {/* in classname use group-something to control animation in group  */}
+      <div className="control opacity-0 duration-300 translate-x-5 group-hover:pointer-events-auto group-hover:opacity-100 group-hover:translate-x-0 flex gap-1 pointer-events-none">
+        <button
+          onClick={() => setIsEditing(true)}
+          className="text-red-500 hover:text-red-700 duration-300 active:scale-75 cursor-pointer"
+        >
+          <PencilIcon />
+        </button>
+        <button
+          onClick={handleDelete}
+          className="text-red-500 hover:text-red-700 duration-300 active:scale-75 cursor-pointer"
+        >
+          <Trash2 />
+        </button>
+      </div>
     </div>
   );
 };
