@@ -9,7 +9,7 @@ const TodoList = ({ todos, toggleTodo, editTodo, deleteTodo }) => {
     return (
       <div className="hidden last:flex flex-col items-center py-10">
         <Image src="/empty.svg" width={150} height={32} alt="png" />
-        <p className="text-neutral-500">No todos yet!</p>
+        <p className="text-neutral-500">No To-Do yet!</p>
       </div>
     );
   }
