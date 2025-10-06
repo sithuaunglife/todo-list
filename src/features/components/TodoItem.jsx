@@ -2,6 +2,7 @@
 "use client";
 import { PencilIcon, Trash2 } from "lucide-react";
 import { useState } from "react";
+import { toast } from "sonner";
 
 // child
 const TodoItem = ({ todo, toggleTodo, editTodo, deleteTodo }) => {
@@ -9,27 +10,33 @@ const TodoItem = ({ todo, toggleTodo, editTodo, deleteTodo }) => {
   const [value, setValue] = useState(todo.text);
   const [isExiting, setIsExiting] = useState(false);
 
+  // Toaster 
   const handleSave = () => {
     setIsEditing(false);
     editTodo(todo.id, value);
+    toast.success("To-Do Updated");
   };
 
+  // Toaster 
   const handleDelete = () => {
     setIsExiting(true);
     // Wait for animation to finish before calling onDelete
-    setTimeout(() => deleteTodo(todo.id), 1000); // 700ms matches animate.css default
+    setTimeout(() => {
+      deleteTodo(todo.id);
+      toast.error("To-Do Deleted");
+    }, 700); // 700ms matches animate.css default
   };
 
   // Presentational Component
   return (
     // in classname give group at outer shell to control group at animation group
     <div
-      className={`group flex items-center justify-between border px-3 py-4 rounded 
+      className={`group flex items-center justify-between border border-stone-800 px-3 py-4 rounded 
         animate__animated 
         ${
           isExiting
-            ? "animate__bounceOutRight animate__slow"
-            : "animate__bounceInLeft animate__slow"
+            ? "animate__fadeOutRight animate__fast"
+            : "animate__fadeInLeft animate__fast"
         }`}
     >
       <div className="flex items-center gap-2">
@@ -64,13 +71,13 @@ const TodoItem = ({ todo, toggleTodo, editTodo, deleteTodo }) => {
       <div className="control opacity-0 duration-300 translate-x-5 group-hover:pointer-events-auto group-hover:opacity-100 group-hover:translate-x-0 flex gap-1 pointer-events-none">
         <button
           onClick={() => setIsEditing(true)}
-          className="text-red-500 hover:text-red-700 duration-300 active:scale-75 cursor-pointer"
+          className="text-gray-500 hover:text-red-700 duration-300 active:scale-75 cursor-pointer"
         >
           <PencilIcon />
         </button>
         <button
           onClick={handleDelete}
-          className="text-red-500 hover:text-red-700 duration-300 active:scale-75 cursor-pointer"
+          className="text-gray-500 hover:text-red-700 duration-300 active:scale-75 cursor-pointer"
         >
           <Trash2 />
         </button>

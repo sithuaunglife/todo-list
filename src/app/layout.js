@@ -1,5 +1,6 @@
 import "../styles/globals.css";
 import "animate.css";
+import { Toaster } from "@/components/ui/sonner"
 
 export const metadata = {
   title: "Create Next App",
@@ -12,7 +13,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={``}>{children}</body>
+      <head />
+      <body>
+        <main>{children}</main>
+        <Toaster richColors toastOptions={{ duration: 2000 }} />
+      </body>
     </html>
   );
 }

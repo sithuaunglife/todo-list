@@ -2,6 +2,7 @@
 "use client"
 import { Plus } from "lucide-react";
 import { useState } from "react";
+import { toast } from "sonner";
 
 const InputBar = ({ addTodo }) => {
   const [text, setText] = useState("");
@@ -11,6 +12,7 @@ const InputBar = ({ addTodo }) => {
     if (text.trim()) {
       addTodo(text);
       setText("");
+      toast.success("To-Do Set Successfully")
     }
   };
 
