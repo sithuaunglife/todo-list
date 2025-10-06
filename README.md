@@ -5,7 +5,8 @@
 ## Version history
 
 - v0.1.0 - Todo list started
-- v0.3.2 - Edit button, Animations update 
+- v0.3.2 - Edit button, Animations update
+- v0.4.1 - Sooner toaster update
 
 ## Getting Started
 
