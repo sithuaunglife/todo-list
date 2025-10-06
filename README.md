@@ -5,7 +5,7 @@
 ## Version history
 
 - v0.1.0 - Todo list started
-- v0.3.2 - Added favicon, edit button and animations.Adjusted box width.Changed name. 
+- v0.3.2 - Edit button, Animations update 
 
 ## Getting Started
 
