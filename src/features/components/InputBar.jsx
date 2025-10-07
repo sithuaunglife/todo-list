@@ -12,7 +12,7 @@ const InputBar = ({ addTodo }) => {
     if (text.trim()) {
       addTodo(text);
       setText("");
-      toast.success("To-Do Set Successfully")
+      toast.success("To-Do List Set Successfully")
     }
   };
 
