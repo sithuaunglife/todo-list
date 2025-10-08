@@ -95,7 +95,7 @@ const TodoItem = ({ todo, toggleTodo, editTodo, deleteTodo }) => {
         </button>
 
         <AlertDialog>
-          <AlertDialogTrigger>
+          <AlertDialogTrigger asChild>
             <button className="flex items-center justify-center text-gray-500 hover:text-red-700 duration-300 active:scale-75 cursor-pointer">
               <Trash2 className="size-6" />
             </button>
