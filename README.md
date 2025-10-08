@@ -8,6 +8,7 @@
 - v0.3.2 - Edit button, Animations update
 - v0.4.1 - Sonner toaster update
 - v0.5.1 - Alert-Dialog update
+- v0.5.3 - Move files and folders patch
 
 ## Getting Started
 
