@@ -4,13 +4,13 @@ import { Plus } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 
-const InputBar = ({ addTodo }) => {
+const InputBar = ({ handleAddTodo }) => {
   const [text, setText] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (text.trim()) {
-      addTodo(text);
+      handleAddTodo(text);
       setText("");
       toast.success("To-Do List Set Successfully")
     }
