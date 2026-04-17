@@ -10,6 +10,7 @@
 - v0.5.1 - Alert-Dialog update
 - v0.5.3 - Move files and folders patch
 - v0.6.0 - Persistent-storage update
+- v0.7.0 - Local state handling update
 
 ## Getting Started
 
