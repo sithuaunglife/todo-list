@@ -1,22 +1,36 @@
-// Container Component 
-"use client"
+// Container Component
+"use client";
 import { Plus } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 
-const InputBar = ({ handleAddTodo }) => {
+// const InputBar = ({ handleAddTodo }) => {
+//   const [text, setText] = useState("");
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     if (text.trim()) {
+//       handleAddTodo(text);
+//       setText("");
+//       toast.success("To-Do List Set Successfully")
+//     }
+//   };
+// * Use this for swr fetching *
+
+const InputBar = ({ addTodo }) => {
   const [text, setText] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (text.trim()) {
-      handleAddTodo(text);
+      addTodo(text);
       setText("");
-      toast.success("To-Do List Set Successfully")
+      toast.success("To-Do List Set Successfully");
     }
   };
+  // * Use this for local state *
 
-  // Presentational Component 
+  // Presentational Component
   return (
     <form onSubmit={handleSubmit} className="flex mb-5">
       <input

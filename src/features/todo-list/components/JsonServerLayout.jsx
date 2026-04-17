@@ -1,9 +1,10 @@
+// for using with json server
 "use client";
-import { useTodos } from "@/hooks/useTodos";
-import InputBar from "../../components/InputBar";
-import TodoList from "../../components/TodoList";
+import { useTodos } from "@/features/todo-list/hooks/useTodos";
+import InputBar from "./InputBar";
+import JsonServerTodoList from "./JsonServerTodoList";
 
-const HomePage = () => {
+const JsonServerLayout = () => {
   const {
     todos,
     isLoading,
@@ -37,7 +38,7 @@ const HomePage = () => {
         </div>
       </div>
 
-      <TodoList
+      <JsonServerTodoList
         todos={todos}
         toggleTodo={toggleTodo}
         editTodo={editTodo}
@@ -47,4 +48,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default JsonServerLayout;
