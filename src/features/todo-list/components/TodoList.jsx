@@ -4,7 +4,7 @@ import TodoItem from "./TodoItem";
 
 // Parent 
 // Presentation Component 
-const TodoList = ({ todos, toggleTodo, editTodo, deleteTodo }) => {
+const TodoList = ({ todos }) => {
   if (todos.length === 0) {
     return (
       <div className="hidden last:flex flex-col items-center py-10">
@@ -21,9 +21,6 @@ const TodoList = ({ todos, toggleTodo, editTodo, deleteTodo }) => {
         <TodoItem
           key={todo.id}
           todo={todo}
-          toggleTodo={toggleTodo}
-          editTodo={editTodo}
-          deleteTodo={deleteTodo}
         />
       ))}
     </div>
