@@ -11,6 +11,7 @@
 - v0.5.3 - Move files and folders patch
 - v0.6.0 - Persistent-storage update
 - v0.7.0 - Local state handling update
+- v0.9.0 - Zustand Persistent-storage update
 
 ## Getting Started
 
