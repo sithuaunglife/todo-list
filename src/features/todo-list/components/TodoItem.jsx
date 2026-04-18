@@ -14,9 +14,11 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
+import { useTodoStore } from "@/stores/useTodoStore";
 
 // child
-const TodoItem = ({ todo, toggleTodo, editTodo, deleteTodo }) => {
+const TodoItem = ({ todo }) => {
+  const {toggleTodo, editTodo, deleteTodo } = useTodoStore()
   const [isEditing, setIsEditing] = useState(false);
   const [value, setValue] = useState(todo.text);
   const [isExiting, setIsExiting] = useState(false);
