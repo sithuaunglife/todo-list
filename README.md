@@ -13,6 +13,7 @@
 - v0.7.0 - Local state handling update
 - v0.9.0 - Zustand Persistent-storage update
 - v0.11.1 - Mobile Responsive update
+- v1.0.0 - Production Release
 
 ## Getting Started
 
