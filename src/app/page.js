@@ -1,13 +1,12 @@
 "use client";
-import JsonServerLayout from "@/features/todo-list/components/JsonServerLayout";
-import TodoListLayout from "@/features/todo-list/components/TodoListLayout";
+import TodoLayout from "@/features/todo-list/components/TodoLayout";
 import React from "react";
 
 const page = () => {
   return (
     <div>
-      <TodoListLayout />
-      {/* <JsonServerLayout /> */}
+      <TodoLayout />
+      {/* <JsonServerTodoLayout /> */}
     </div>
   );
 };
