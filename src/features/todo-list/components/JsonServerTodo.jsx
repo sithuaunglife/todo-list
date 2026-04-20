@@ -3,7 +3,7 @@ import Image from "next/image";
 import TodoItem from "./TodoItem";
 import { useTodos } from "../hooks/useTodos"; // <-- your SWR hook
 
-const JsonServerTodoList = () => {
+const JsonServerTodo = () => {
   const { todos, isLoading, isError, toggleTodo, editTodo, deleteTodo } =
     useTodos();
 
@@ -34,4 +34,4 @@ const JsonServerTodoList = () => {
   );
 };
 
-export default JsonServerTodoList;
+export default JsonServerTodo;

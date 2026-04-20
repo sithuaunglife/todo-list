@@ -4,7 +4,7 @@ import InputBar from "./InputBar";
 import TodoList from "./TodoList";
 import TodoLoader from "./TodoLoader";
 
-const TodoListLayout = () => {
+const TodoSection = () => {
   const { todos, addTodo, hasHydrated } = useTodoStore();
 
   const doneCount = todos.filter((t) => t.done).length;
@@ -12,8 +12,10 @@ const TodoListLayout = () => {
 
   if (!hasHydrated) {
     return (
-      <div className="w-[400px] mx-auto mt-20">
-        <h1 className="text-4xl font-bold font-serif mb-5">Todo App</h1>
+      <div className="max-w-[400px] w-full mx-auto mt-10 px-4">
+        <h1 className="text-3xl sm:text-4xl font-bold font-serif mb-5">
+          Todo App
+        </h1>
 
         <InputBar addTodo={addTodo} />
 
@@ -30,8 +32,10 @@ const TodoListLayout = () => {
   }
 
   return (
-    <div className="w-[400px] mx-auto mt-20">
-      <h1 className="text-4xl font-bold font-serif mb-5">Todo App</h1>
+    <div className="max-w-[400px] w-full mx-auto mt-10 px-4">
+      <h1 className="text-3xl sm:text-4xl font-bold font-serif mb-5">
+        Todo App
+      </h1>
 
       <InputBar addTodo={addTodo} />
 
@@ -42,11 +46,9 @@ const TodoListLayout = () => {
         </div>
       </div>
 
-      <TodoList
-        todos={todos}
-      />
+      <TodoList todos={todos} />
     </div>
   );
 };
 
-export default TodoListLayout;
+export default TodoSection;

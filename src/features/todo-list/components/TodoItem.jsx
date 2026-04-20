@@ -18,7 +18,7 @@ import { useTodoStore } from "@/stores/useTodoStore";
 
 // child
 const TodoItem = ({ todo }) => {
-  const {toggleTodo, editTodo, deleteTodo } = useTodoStore()
+  const { toggleTodo, editTodo, deleteTodo } = useTodoStore();
   const [isEditing, setIsEditing] = useState(false);
   const [value, setValue] = useState(todo.text);
   const [isExiting, setIsExiting] = useState(false);
@@ -44,12 +44,12 @@ const TodoItem = ({ todo }) => {
   return (
     // in classname give group at outer shell to control group at animation group
     <div
-      className={`group flex items-center justify-between border border-stone-800 px-3 py-4 rounded 
+      className={`group flex items-center justify-between border border-stone-700 px-3 py-4 rounded 
         animate__animated 
         ${
           isExiting
-            ? "animate__fadeOutRight animate__fast"
-            : "animate__fadeInLeft animate__fast"
+            ? "animate__fadeOut animate__fast"
+            : "animate__fadeIn animate__fast"
         }`}
     >
       <div className="flex items-center gap-2">
@@ -61,7 +61,7 @@ const TodoItem = ({ todo }) => {
             toast.info(
               todo.done
                 ? "To-Do List marked as incomplete ❌"
-                : "To-Do List marked as done ✅"
+                : "To-Do List marked as done ✅",
             );
           }}
           className="w-4 h-4 cursor-pointer"
@@ -88,7 +88,16 @@ const TodoItem = ({ todo }) => {
 
       {/* in classname use control to control group animation */}
       {/* in classname use group-something to control animation in group  */}
-      <div className="control opacity-0 duration-300 translate-x-5 group-hover:pointer-events-auto group-hover:opacity-100 group-hover:translate-x-0 flex items-center gap-1 pointer-events-none">
+      <div
+        className="flex items-center gap-1
+
+    opacity-100 translate-x-0 pointer-events-auto
+
+    sm:opacity-0 sm:translate-x-5 sm:pointer-events-none
+    sm:group-hover:opacity-100 sm:group-hover:translate-x-0 sm:group-hover:pointer-events-auto
+
+    transition duration-300"
+      >
         <button
           onClick={() => setIsEditing(true)}
           className="flex items-center justify-center text-gray-500 hover:text-red-700 duration-300 active:scale-75 cursor-pointer"
