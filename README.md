@@ -12,6 +12,7 @@
 - v0.6.0 - Persistent-storage update
 - v0.7.0 - Local state handling update
 - v0.9.0 - Zustand Persistent-storage update
+- v0.11.1 - Mobile Responsive update
 
 ## Getting Started
 
@@ -20,13 +21,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 First, run the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
 pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
